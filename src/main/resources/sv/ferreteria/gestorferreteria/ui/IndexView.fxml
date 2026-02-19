@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainContainer" prefHeight="750.0" prefWidth="1100.0"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sv.ferreteria.gestorferreteria.ui.IndexController"
+            style="-fx-background-color: #f8fafc;">
+
+    <left>
+        <VBox spacing="5" prefWidth="260" style="-fx-background-color: #0f172a;">
+            <VBox alignment="CENTER_LEFT" spacing="5" style="-fx-padding: 40 25 40 25;">
+                <Label text="FerreTotal" textFill="WHITE" style="-fx-font-weight: 900; -fx-font-size: 22px; -fx-font-family: 'Segoe UI';" />
+                <Label text="Gestión de Inventario" textFill="#94a3b8" style="-fx-font-size: 12px;" />
+            </VBox>
+
+            <VBox spacing="8" style="-fx-padding: 0 15 0 15;">
+                <Button onAction="#showProductos" text="Productos" alignment="BASELINE_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #cbd5e1; -fx-font-size: 14px; -fx-cursor: hand; -fx-pref-width: 230; -fx-padding: 12 20; -fx-background-radius: 8;" />
+
+                <Button onAction="#showProveedores" text="Proveedores" alignment="BASELINE_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #cbd5e1; -fx-font-size: 14px; -fx-cursor: hand; -fx-pref-width: 230; -fx-padding: 12 20; -fx-background-radius: 8;" />
+
+                <Button onAction="#showVentas" text="Ventas" alignment="BASELINE_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #cbd5e1; -fx-font-size: 14px; -fx-cursor: hand; -fx-pref-width: 230; -fx-padding: 12 20; -fx-background-radius: 8;" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #f8fafc;">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Bienvenido al Sistema" textFill="#1e293b" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI';" />
+                <Label text="Seleccione un módulo para comenzar" textFill="#64748b" style="-fx-font-size: 16px;" />
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

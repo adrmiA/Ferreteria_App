@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sv.ferreteria.gestorferreteria.ui.ventas.VentasController"
+      style="-fx-background-color: #f8fafc; -fx-padding: 30;">
+
+    <VBox spacing="5">
+        <Label text="Ventas" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" />
+    </VBox>
+
+    <HBox spacing="25" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);">
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Seleccionar Producto" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #475569;"/>
+            <ComboBox fx:id="cbProducto" maxWidth="Infinity" promptText="Buscar artículo..."
+                      style="-fx-pref-height: 45; -fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8;"/>
+        </VBox>
+
+        <VBox spacing="8">
+            <Label text="Cantidad" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #475569;"/>
+            <TextField fx:id="txtCantidad" prefWidth="120" promptText="0"
+                       style="-fx-pref-height: 45; -fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-alignment: center; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <VBox alignment="BOTTOM_CENTER">
+            <Button text="Confirmar Venta" onAction="#onRegistrarVenta"
+                    prefHeight="45" prefWidth="180"
+                    style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8;" />
+        </VBox>
+    </HBox>
+
+    <TableView fx:id="tableVentas" VBox.vgrow="ALWAYS" style="-fx-background-radius: 12; -fx-border-color: #e2e8f0;">
+        <columns>
+            <TableColumn fx:id="colId" text="Folio" prefWidth="80"/>
+            <TableColumn fx:id="colProducto" text="Descripción" prefWidth="250"/>
+            <TableColumn fx:id="colFecha" text="Fecha / Hora" prefWidth="180"/>
+            <TableColumn fx:id="colCantidad" text="Cant." prefWidth="100"/>
+            <TableColumn fx:id="colTotal" text="Importe Total" prefWidth="140"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+</VBox>
