@@ -62,7 +62,6 @@ public class ApiClient {
         return sendRequest(request);
     }
 
-    // Metodo Centralizado
     private String sendRequest(HttpRequest request) throws Exception {
         try {
             HttpResponse<String> response = httpClient.send(
